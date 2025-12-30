@@ -23,6 +23,7 @@ body::-webkit-scrollbar-thumb {
 /* HERO */
 .hero-image {
   height: 75%;
+  margin-top: 60px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -171,11 +172,6 @@ body::-webkit-scrollbar-thumb {
 
 .nav-right a:hover {
   color: #90caf9;
-}
-
-/* Push content down so navbar doesn't overlap */
-body {
-  padding-top: 60px;
 }
 
 .taxonomy-item {
