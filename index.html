@@ -7,7 +7,6 @@
 
 <body>
 
-<!-- NAVBAR -->
 <div class="navbar">
 <div class="nav-left">SIE3006</div>
 <div class="nav-right">
@@ -17,17 +16,17 @@
 </div>
 </div>
 
-<!-- HERO -->
 <div class="hero-image" id="heroImage">
 <div class="hero-text">
 <h1 style="font-size:50px">Course Projects of Economic Botany (SIE3006)</h1>
-<p>Welcome to our website for the Economic Botany practical project. This site <br>
-   presents a curated collection of practical projects. <br>
+<p>Welcome to our website for the Economic Botany practical project.
+This site <br>
+   presents a curated collection of practical projects.
+<br>
    Each practical will be updated in this website.</p>
 </div>
 </div>
 
-<!-- CREDITS -->
 <div class="credits-section">
 <p>Created by: <strong>Danieal Ng Kar Him, Lee Shu En, Cally Yew Sim Yue, <br>
   Lim Wen Kai, Ackash Kumar, Zhang Mengqi and Yang haoran</strong></p>
@@ -35,50 +34,44 @@
 <p>Universiti Malaya</p>
 </div>
 
-<!-- PROJECT INFO -->
 <div class="product-info" id="projects">
   <h2 style="text-align:center; margin-top: 40px;">Our Projects</h2>
 
   <div class="product-cards">
 
-    <!-- Practical 1 -->
-	<div class="product-card card-green">
+    <div class="product-card card-green">
 		<h3>Practical 1 (Algae and Mushroom)</h3>
 		<div class="card-content" id="practical1"></div>
 	</div>
 
-    <!-- Practical 2 -->
     <div class="product-card card-blue">
       <h3>Practical 2 (Ferns)</h3>
       <div class="card-content" id="taxonomy">
 	  
-	  <!-- Notification -->
-		  <p style="font-size:14px; color:#555; margin-bottom:20px;">
+	  <p style="font-size:14px; color:#555; margin-bottom:20px;">
 			<em>Note:</em> The taxonomic classification presented in this 				practical is arranged in the following order:
 		<strong>Class → Order → Family → Genus</strong>.</p></div>
     </div>
 
-<!-- Field Trip Report -->
 <div class="product-card card-yellow" id="fieldtrip-card">
   <h3>Field Trip Report</h3>
   <div class="card-content">
-	<p style="font-size:14px; color:#555; margin-bottom:20px;"><br>
+	<p style="font-size:14px;
+color:#555; margin-bottom:20px;"><br>
 	  Location: Jalan Sungai Bentong 1 <br>
 	  Coordination: 2°51'07.1"N 101°55'35.5"E</p>
 	<div id="fieldtrip-houses"></div>
 </div>
 </div>
 
-<!-- Placeholder -->
-    <div class="product-card card-grey">
+<div class="product-card card-grey">
       <h3>Waiting to be updated</h3>
       <div class="card-content">
         <p>New project will be added soon.</p>
       </div>
     </div>
-	
-<script>
-/* Expandable cards */
+
+<script src="js/main.js"></script> <script>
 const cards = document.querySelectorAll('.product-card');
 cards.forEach(card => {
   card.addEventListener('click', () => {
@@ -86,18 +79,19 @@ cards.forEach(card => {
     if (content.style.maxHeight) {
       content.style.maxHeight = null;
     } else {
+      // Use scrollHeight to expand to full content size
       content.style.maxHeight = content.scrollHeight + "px";
     }
   });
 });
+</script>
 
-/* HERO IMAGE ROTATION */
+<script>
 const images = [
   "https://cdn.pixabay.com/photo/2023/08/15/11/47/mushroom-8191823_1280.jpg",
   "https://cdn.pixabay.com/photo/2020/06/21/07/08/lichen-5323493_1280.jpg",
   "https://cdn.pixabay.com/photo/2013/04/04/16/06/lichen-100432_1280.jpg"
 ];
-
 let index = 0;
 const hero = document.getElementById("heroImage");
 const fadeLayer = document.createElement("div");
@@ -145,7 +139,6 @@ setInterval(changeImage, 5000);
   });
 </script>
 
-<script src="js/main.js"></script>
-
 </body>
 </html>
+	  
