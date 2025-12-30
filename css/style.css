@@ -6,7 +6,6 @@ body, html {
   height: 100%;
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  /* Removed padding-top: 60px; from body as it conflicts with height: 100% */
 }
 
 /* Scrollbar */
@@ -60,6 +59,9 @@ body::-webkit-scrollbar-thumb {
 .product-info {
   padding: 50px 20px;
   background-color: #f0f0f0;
+  
+  position: relative; /* ADDED: Establish a new stacking context */
+  z-index: 5;       /* ADDED: Ensures the whole project section is above surrounding content */
 }
 .product-cards {
   display: flex;
@@ -79,9 +81,9 @@ body::-webkit-scrollbar-thumb {
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   
-  /* FIX FOR UNCLICKABLE CARDS (Z-INDEX ISSUE) */
-  position: relative; /* REQUIRED for z-index to work */
-  z-index: 10;      /* Ensures cards stack above any lower-z-index overlays (like the hero fade layer, z-index: 1) */
+  /* FIXED: Ensures cards stack above any lower-z-index overlays (like the hero fade layer, z-index: 1) */
+  position: relative; 
+  z-index: 10;      
 }
 .product-card:hover {
   transform: translateY(-5px);
@@ -177,6 +179,8 @@ body::-webkit-scrollbar-thumb {
 .nav-right a:hover {
   color: #90caf9;
 }
+
+/* Note: Removed body { padding-top: 60px; } */
 
 .taxonomy-item {
   display: flex;
