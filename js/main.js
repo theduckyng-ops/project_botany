@@ -1,5 +1,5 @@
 /* ===============================
-   CARD TOGGLE (OPEN / CLOSE)
+    CARD TOGGLE (OPEN / CLOSE)
 ================================ */
 document.querySelectorAll(".product-card").forEach(card => {
   card.addEventListener("click", () => {
@@ -16,7 +16,7 @@ document.querySelectorAll(".product-card").forEach(card => {
 
 
 /* ===============================
-   PRACTICAL 1 DATA (Refactored for efficiency)
+    PRACTICAL 1 DATA (Refactored for efficiency)
 ================================ */
 fetch("data/practical1.json")
   .then(res => res.json())
@@ -44,13 +44,13 @@ fetch("data/practical1.json")
     `).join(""); // Join all mapped strings together
 
     // 2. Insert the entire string into the DOM in one go
-    container.innerHTML += htmlContent; // Use += to keep existing "Note" from HTML
+    container.innerHTML += htmlContent; 
   })
   .catch(err => console.error("Failed to load practical1.json:", err));
 
 
 /* ===============================
-   TAXONOMY DATA
+    TAXONOMY DATA (Refactored for efficiency)
 ================================ */
 fetch("data/taxonomy.json")
   .then(res => res.json())
@@ -58,74 +58,82 @@ fetch("data/taxonomy.json")
     const container = document.getElementById("taxonomy");
     if (!container) return;
 
-    data.forEach(item => {
-      container.innerHTML += `
-        <div class="card-item" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:20px;">
-          
-          <div style="display:flex; gap:10px;">
-            ${item.images.map(img => `
-              <img src="${img}"
-                   alt="Taxonomy image"
-                   style="width:150px; height:auto; border-radius:10px;">
-            `).join("")}
-          </div>
-
-          <div>
-            <p><strong>Taxonomy:</strong> <i>${item.taxonomy}</i></p>
-
-            <p><strong>Key Features:</strong></p>
-            <ul>
-              ${item.features.map(f => `<li>${f}</li>`).join("")}
-            </ul>
-
-            <p><strong>Habitat:</strong> ${item.habitat}</p>
-          </div>
-
+    // 1. Build the full HTML string for all items
+    const htmlContent = data.map(item => `
+      <div class="card-item" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:20px;">
+        
+        <div style="display:flex; gap:10px;">
+          ${item.images.map(img => `
+            <img src="${img}"
+              alt="Taxonomy image"
+              style="width:150px; height:auto; border-radius:10px;">
+          `).join("")}
         </div>
-      `;
-    });
+
+        <div>
+          <p><strong>Taxonomy:</strong> <i>${item.taxonomy}</i></p>
+
+          <p><strong>Key Features:</strong></p>
+          <ul>
+            ${item.features.map(f => `<li>${f}</li>`).join("")}
+          </ul>
+
+          <p><strong>Habitat:</strong> ${item.habitat}</p>
+        </div>
+
+      </div>
+    `).join(""); // Join all mapped strings together
+
+    // 2. Insert the entire string into the DOM in one go
+    container.innerHTML += htmlContent; 
   })
   .catch(err => console.error("Failed to load taxonomy.json:", err));
 
+
+/* ===============================
+    FIELD TRIP DATA (Refactored for efficiency)
+================================ */
 fetch("data/fieldtrip.json")
   .then(res => res.json())
   .then(data => {
     const container = document.getElementById("fieldtrip-houses");
     if (!container) return;
 
-    data.forEach(house => {
-      container.innerHTML += `
-        <div class="card-item" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:30px;">
-          
-          <img src="${house.image}"
-               alt="${house.house}"
-               style="width:180px; border-radius:10px; object-fit:cover;">
+    // 1. Build the full HTML string for all houses
+    const htmlContent = data.map(house => `
+      <div class="card-item" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:30px;">
+        
+        <img src="${house.image}"
+          alt="${house.house}"
+          style="width:180px; border-radius:10px; object-fit:cover;">
 
-          <div>
-            <p><strong>House ID:</strong> ${house.house}</p>
+        <div>
+          <p><strong>House ID:</strong> ${house.house}</p>
 
-            <table border="1" cellpadding="5" cellspacing="0">
-              <thead>
+          <table border="1" cellpadding="5" cellspacing="0">
+            <thead>
+              <tr>
+                <th>Scientific Name</th>
+                <th>Common Name</th>
+                <th>Number of Individuals</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${house.species.map(s => `
                 <tr>
-                  <th>Scientific Name</th>
-                  <th>Common Name</th>
-                  <th>Number of Individuals</th>
+                  <td><i>${s.scientific}</i></td>
+                  <td>${s.common}</td>
+                  <td>${s.count}</td>
                 </tr>
-              </thead>
-              <tbody>
-                ${house.species.map(s => `
-                  <tr>
-                    <td><i>${s.scientific}</i></td>
-                    <td>${s.common}</td>
-                    <td>${s.count}</td>
-                  </tr>
-                `).join("")}
-              </tbody>
-            </table>
-          </div>
-
+              `).join("")}
+            </tbody>
+          </table>
         </div>
-      `;
-    });
+
+      </div>
+    `).join(""); // Join all mapped strings together
+
+    // 2. Insert the entire string into the DOM in one go
+    container.innerHTML += htmlContent; 
   })
   .catch(err => console.error("Failed to load field trip data:", err));
