@@ -16,7 +16,7 @@ document.querySelectorAll(".product-card").forEach(card => {
 
 
 /* ===============================
-   PRACTICAL 1 DATA
+   PRACTICAL 1 DATA (Refactored for efficiency)
 ================================ */
 fetch("data/practical1.json")
   .then(res => res.json())
@@ -24,25 +24,27 @@ fetch("data/practical1.json")
     const container = document.getElementById("practical1");
     if (!container) return;
 
-    data.forEach(item => {
-      container.innerHTML += `
-        <div class="card-item">
-          <img src="${item.image}" alt="${item.commonName}">
-          <div>
-            <p><strong>Common Name:</strong> ${item.commonName}</p>
-            <p><strong>Scientific Name:</strong>
-              <i>${item.scientificName.join(", ")}</i>
-            </p>
-            <p><strong>Ingredients:</strong> ${item.ingredients}</p>
-            <p><strong>Producer:</strong> ${item.producer}</p>
-            <p><strong>Purpose / Benefits:</strong></p>
-            <ul>
-              ${item.benefits.map(b => `<li>${b}</li>`).join("")}
-            </ul>
-          </div>
+    // 1. Build the full HTML string for all items
+    const htmlContent = data.map(item => `
+      <div class="card-item">
+        <img src="${item.image}" alt="${item.commonName}">
+        <div>
+          <p><strong>Common Name:</strong> ${item.commonName}</p>
+          <p><strong>Scientific Name:</strong>
+            <i>${item.scientificName.join(", ")}</i>
+          </p>
+          <p><strong>Ingredients:</strong> ${item.ingredients}</p>
+          <p><strong>Producer:</strong> ${item.producer}</p>
+          <p><strong>Purpose / Benefits:</strong></p>
+          <ul>
+            ${item.benefits.map(b => `<li>${b}</li>`).join("")}
+          </ul>
         </div>
-      `;
-    });
+      </div>
+    `).join(""); // Join all mapped strings together
+
+    // 2. Insert the entire string into the DOM in one go
+    container.innerHTML += htmlContent; // Use += to keep existing "Note" from HTML
   })
   .catch(err => console.error("Failed to load practical1.json:", err));
 
