@@ -1,19 +1,8 @@
 /* ===============================
     CARD TOGGLE (OPEN / CLOSE)
 ================================ */
-document.querySelectorAll(".product-card").forEach(card => {
-  card.addEventListener("click", () => {
-    const content = card.querySelector(".card-content");
-    if (!content) return;
-
-    if (content.style.maxHeight) {
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    }
-  });
-});
-
+// NOTE: This logic is typically better placed in the <script> block 
+// in index.html to ensure it runs immediately after the DOM loads.
 
 /* ===============================
     PRACTICAL 1 DATA (Refactored for efficiency)
@@ -41,7 +30,7 @@ fetch("data/practical1.json")
           </ul>
         </div>
       </div>
-    `).join(""); // Join all mapped strings together
+    `).join(""); 
 
     // 2. Insert the entire string into the DOM in one go
     container.innerHTML += htmlContent; 
@@ -82,7 +71,7 @@ fetch("data/taxonomy.json")
         </div>
 
       </div>
-    `).join(""); // Join all mapped strings together
+    `).join(""); 
 
     // 2. Insert the entire string into the DOM in one go
     container.innerHTML += htmlContent; 
@@ -131,7 +120,7 @@ fetch("data/fieldtrip.json")
         </div>
 
       </div>
-    `).join(""); // Join all mapped strings together
+    `).join(""); 
 
     // 2. Insert the entire string into the DOM in one go
     container.innerHTML += htmlContent; 
