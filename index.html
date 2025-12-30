@@ -79,6 +79,9 @@ const cards = document.querySelectorAll('.product-card');
 cards.forEach(card => {
   card.addEventListener('click', () => {
     const content = card.querySelector('.card-content');
+    // Added safety check in case content is missing
+    if (!content) return;
+    
     if (content.style.maxHeight) {
       content.style.maxHeight = null;
     } else {
@@ -108,7 +111,7 @@ fadeLayer.style.backgroundPosition = "center";
 fadeLayer.style.backgroundRepeat = "no-repeat";
 fadeLayer.style.opacity = 0;
 fadeLayer.style.transition = "opacity 1.2s ease-in-out";
-fadeLayer.style.zIndex = 1;
+fadeLayer.style.zIndex = 1; // Z-index 1 for the hero overlay
 hero.appendChild(fadeLayer);
 
 function changeImage() {
