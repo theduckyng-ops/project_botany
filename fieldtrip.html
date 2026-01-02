@@ -66,30 +66,30 @@ table {
   width: 100%;
   margin-top: 10px;
   font-size: 14px;
-  table-layout: fixed;
-  border: 2px solid #fdd835;
+  table-layout: fixed;           /* ensures even column widths */
+  border: 2px solid #fdd835;    /* full table border (matching yellow theme) */
   border-radius: 8px;
   overflow: hidden;
 }
 
 th, td {
-  border: 1px solid #fdd835;
+  border: 1px solid #fdd835;    /* cell borders in yellow */
   padding: 8px;
-  text-align: center;
-  word-wrap: break-word;
+  text-align: center;           /* centers text in cells */
+  word-wrap: break-word;        /* prevents overflow for long names */
 }
 
 th {
-  background: #ffeb99;
+  background: #ffeb99;          /* light yellow header */
   font-weight: bold;
 }
 
 td {
-  background: #fff8e1;
+  background: #fff8e1;          /* slightly lighter row background */
 }
 
 tbody tr:nth-child(even) {
-  background: #fff2cc;
+  background: #fff2cc;          /* subtle yellow stripe for even rows */
 }
 
 /* NAVBAR */
@@ -124,6 +124,14 @@ tbody tr:nth-child(even) {
 .nav-right a:hover {
   color: #90caf9;
 }
+
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+  }
 
 </style>
 
@@ -288,7 +296,7 @@ tbody tr:nth-child(even) {
           <td>8</td>
         </tr>
         <tr>
-          <td><i>Musa</i>sp.</td>
+          <td><i>Musa</i> sp.</td>
           <td>Banana tree</td>
           <td>15</td>
         </tr>
@@ -875,8 +883,8 @@ tbody tr:nth-child(even) {
     </table>
   </div>
 </div>
+<a href="index.html#projects" class="back-btn">← Back to Projects</a>
   </div>
-</div>
 
 </body>
 </html>
