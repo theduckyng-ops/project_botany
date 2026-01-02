@@ -1,103 +1,264 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="css/style.css">
+<style>
+html {
+  scroll-behavior: smooth;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Scrollbar */
+body::-webkit-scrollbar {
+  width: 8px;
+}
+body::-webkit-scrollbar-track { background: transparent; }
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 10px;
+  border: 2px solid transparent;
+}
+
+/* HERO */
+.hero-image {
+  height: 75%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  transition: background-image 1s ease-in-out;
+  overflow: hidden;
+}
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+/* CREDITS */
+.credits-section {
+  height: 19.5%;
+  background: #111;
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+/* PROJECTS */
+.product-info {
+  padding: 50px 20px;
+  background-color: #f0f0f0;
+}
+.product-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto 0;
+}
+.product-card {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  padding: 20px;
+  text-align: left;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+.product-card h3 {
+  margin: 10px 0;
+  color: #333;
+}
+
+/* Accordion content for multiple images */
+.card-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  padding-top: 0;
+}
+.card-item {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+.card-item img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.card-item div {
+  flex: 1;
+}
+.card-item p { margin: 5px 0; }
+
+/* Card colors */
+.card-green  { background-color: #d0f0c0; }   /* pastel green */
+.card-blue   { background-color: #c0e4ff; }   /* pastel blue */
+.card-yellow { background-color: #fff5b7; }   /* pastel yellow */
+.card-grey   { background-color: #e0e0e0; }   /* light grey */
+
+/* Table Styling */
+.card-item table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 14px;
+}
+.card-item table th, 
+.card-item table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+.card-item table th {
+  background-color: #e0f7fa;
+}
+.card-item table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.nav-left {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.nav-right a {
+  color: #eee;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.nav-right a:hover {
+  color: #90caf9;
+}
+
+/* Push content down so navbar doesn't overlap */
+body {
+  padding-top: 60px;
+}
+
+</style>
 <title>Projects of Economic Botany (SIE3006)</title>
 </head>
-
 <body>
 
+<!-- NAVBAR -->
 <div class="navbar">
-<div class="nav-left">SIE3006</div>
-<div class="nav-right">
-<a href="#heroImage">Home</a>
-<a href="#projects">Projects</a>
-<a href="#fieldtrip-card" id="fieldtrip-link">Field Trip</a>
-</div>
+  <div class="nav-left">SIE3006</div>
+  <div class="nav-right">
+    <a href="#heroImage">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="#fieldtrip-card" id="fieldtrip-link">Field Trip</a>
+
+  </div>
 </div>
 
+<!-- HERO -->
 <div class="hero-image" id="heroImage">
-<div class="hero-text">
-<h1 style="font-size:50px">Course Projects of Economic Botany (SIE3006)</h1>
-<p>Welcome to our website for the Economic Botany practical project.
-This site <br>
-   presents a curated collection of practical projects.
-<br>
-   Each practical will be updated in this website.</p>
-</div>
+  <div class="hero-text">
+    <h1 style="font-size:50px">Course Projects of Economic Botany (SIE3006)</h1>
+    <p>Welcome to our website for the Economic Botany practical project. This site <br>
+       presents a curated collection of practical projects. <br>
+       Each practical will be updated in this website.</p>
+  </div>
 </div>
 
+<!-- CREDITS -->
 <div class="credits-section">
-<p>Created by: <strong>Danieal Ng Kar Him, Lee Shu En, Cally Yew Sim Yue, <br>
-  Lim Wen Kai, Ackash Kumar, Zhang Mengqi and Yang haoran</strong></p>
-<p>Course Project: Practical Economic Botany</p>
-<p>Universiti Malaya</p>
+  <p>Created by: <strong>Danieal Ng Kar Him, Lee Shu En, Cally Yew Sim Yue, <br>
+  Lim Wen Kai, Ackash Kumar, Zhang Mengqi and Yang haoran</strong></p>
+  <p>Course Project: Practical Economic Botany</p>
+  <p>Universiti Malaya</p>
 </div>
 
+<!-- PROJECT INFO -->
 <div class="product-info" id="projects">
-  <h2 style="text-align:center; margin-top: 40px;">Our Projects</h2>
+  <h2 style="text-align:center; margin-top: 40px;">Our Projects</h2>
 
-  <div class="product-cards">
+  <div class="product-cards">
 
-        <div class="product-card card-green">
-		<h3>Practical 1 (Algae and Mushroom)</h3>
-		<div class="card-content" id="practical1"></div>
-	</div>
+    <!-- Practical 1 -->
+    <div class="product-card card-green" data-link="practical1.html">
+      <h3>Practical 1 (Algae and Mushroom)</h3>
+      <div class="card-content">
+      </div>
+    </div>
 
-        <div class="product-card card-blue">
-      <h3>Practical 2 (Ferns)</h3>
-      <div class="card-content" id="taxonomy">
-	  
-	  <p style="font-size:14px; color:#555; margin-bottom:20px;">
-			<em>Note:</em> The taxonomic classification presented in this 				practical is arranged in the following order:
-		<strong>Class → Order → Family → Genus</strong>.</p></div>
-    </div>
+    <!-- Practical 2 -->
+    <div class="product-card card-blue" data-link="practical2.html">
+      <h3>Practical 2 (Ferns)</h3>
+      <div class="card-content">
+      </div>
+    </div>
 
-<div class="product-card card-yellow" id="fieldtrip-card">
-  <h3>Field Trip Report</h3>
-  <div class="card-content">
-	<p style="font-size:14px;
-color:#555; margin-bottom:20px;"><br>
-	  Location: Jalan Sungai Bentong 1 <br>
-	  Coordination: 2°51'07.1"N 101°55'35.5"E</p>
-	<div id="fieldtrip-houses"></div>
-</div>
+<!-- Field Trip Report -->
+<div class="product-card card-yellow" id="fieldtrip-card" data-link="fieldtrip.html">
+  <h3>Field Trip Report</h3>
+  <div class="card-content">
+  </div>
 </div>
 
-<div class="product-card card-grey">
-      <h3>Waiting to be updated</h3>
-      <div class="card-content">
-        <p>New project will be added soon.</p>
-      </div>
-    </div>
-
-</div>
-</div> <script src="js/main.js"></script> 
-
+<!-- Placeholder -->
+    <div class="product-card card-grey">
+      <h3>Waiting to be updated</h3>
+      <div class="card-content">
+        <p>New project will be added soon.</p>
+      </div>
+    </div>
+	
 <script>
-const cards = document.querySelectorAll('.product-card');
-cards.forEach(card => {
-  card.addEventListener('click', () => {
-    const content = card.querySelector('.card-content');
-    // Added safety check in case content is missing
-    if (!content) return;
-    
-    if (content.style.maxHeight) {
-      content.style.maxHeight = null;
-    } else {
-      // Use scrollHeight to expand to full content size
-      content.style.maxHeight = content.scrollHeight + "px";
-    }
-  });
-});
-</script>
 
-<script>
+/* HERO IMAGE ROTATION */
 const images = [
-  "https://cdn.pixabay.com/photo/2023/08/15/11/47/mushroom-8191823_1280.jpg",
-  "https://cdn.pixabay.com/photo/2020/06/21/07/08/lichen-5323493_1280.jpg",
-  "https://cdn.pixabay.com/photo/2013/04/04/16/06/lichen-100432_1280.jpg"
+  "https://cdn.pixabay.com/photo/2023/08/15/11/47/mushroom-8191823_1280.jpg",
+  "https://cdn.pixabay.com/photo/2020/06/21/07/08/lichen-5323493_1280.jpg",
+  "https://cdn.pixabay.com/photo/2013/04/04/16/06/lichen-100432_1280.jpg"
 ];
+
 let index = 0;
 const hero = document.getElementById("heroImage");
 const fadeLayer = document.createElement("div");
@@ -111,20 +272,20 @@ fadeLayer.style.backgroundPosition = "center";
 fadeLayer.style.backgroundRepeat = "no-repeat";
 fadeLayer.style.opacity = 0;
 fadeLayer.style.transition = "opacity 1.2s ease-in-out";
-fadeLayer.style.zIndex = 1; // Z-index 1 for the hero overlay
+fadeLayer.style.zIndex = 1;
 hero.appendChild(fadeLayer);
 
 function changeImage() {
-  const newImage = images[index];
-  fadeLayer.style.backgroundImage =
-    `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${newImage}')`;
-  fadeLayer.style.opacity = 1;
-  setTimeout(() => {
-    hero.style.backgroundImage =
-      `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${newImage}')`;
-    fadeLayer.style.opacity = 0;
-  }, 1200);
-  index = (index + 1) % images.length;
+  const newImage = images[index];
+  fadeLayer.style.backgroundImage =
+    `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${newImage}')`;
+  fadeLayer.style.opacity = 1;
+  setTimeout(() => {
+    hero.style.backgroundImage =
+      `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${newImage}')`;
+    fadeLayer.style.opacity = 0;
+  }, 1200);
+  index = (index + 1) % images.length;
 }
 
 changeImage();
@@ -132,17 +293,28 @@ setInterval(changeImage, 5000);
 </script>
 
 <script>
-  document.getElementById('fieldtrip-link').addEventListener('click', function(e) {
-    e.preventDefault(); // prevent default jump
-    const fieldTripCard = document.getElementById('fieldtrip-card');
-    const cardContent = fieldTripCard.querySelector('.card-content');
-    
-    // Expand the card
-    cardContent.style.maxHeight = cardContent.scrollHeight + "px";
-    
-    // Scroll smoothly to it
-    fieldTripCard.scrollIntoView({ behavior: "smooth" });
-  });
+  document.getElementById('fieldtrip-link').addEventListener('click', function(e) {
+    e.preventDefault(); // prevent default jump
+    const fieldTripCard = document.getElementById('fieldtrip-card');
+    const cardContent = fieldTripCard.querySelector('.card-content');
+    
+    // Expand the card
+    cardContent.style.maxHeight = cardContent.scrollHeight + "px";
+    
+    // Scroll smoothly to it
+    fieldTripCard.scrollIntoView({ behavior: "smooth" });
+  });
+</script>
+
+<script>
+  document.querySelectorAll('.product-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const link = card.dataset.link;
+      if (link) {
+        window.location.href = link;
+      }
+    });
+  });
 </script>
 
 </body>
