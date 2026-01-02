@@ -1,1 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Practical 1 – Algae and Mushroom</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f0f0f0;
+      padding-top: 60px;
+    }
+
+    /* NAVBAR (same as index) */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background: rgba(0, 0, 0, 0.85);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 30px;
+      box-sizing: border-box;
+      z-index: 1000;
+    }
+
+    .nav-left {
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .nav-right a {
+      color: #eee;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    .nav-right a:hover {
+      color: #90caf9;
+    }
+
+    /* PAGE CONTENT */
+    .content-wrapper {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .page-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    /* PRACTICAL CARD STYLE */
+    .product-card {
+      background-color: #d0f0c0;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      padding: 25px;
+    }
+
+    .card-item {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 25px;
+      align-items: flex-start;
+    }
+
+    .card-item img {
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .card-item p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .card-item {
+        flex-direction: column;
+      }
+
+      .card-item img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    /* Back button */
+    .back-btn {
+      display: inline-block;
+      margin-top: 40px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="nav-left">SIE3006</div>
+  <div class="nav-right">
+    <a href="index.html">Home</a>
+    <a href="index.html#projects">Projects</a>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+  <h1 class="page-title">Practical 1: Algae and Mushroom</h1>
+
+  <div class="product-card">
+
+    <!-- PRACTICAL 1 -->
+            <div class="card-item">
+		<img src="https://i.ibb.co/wZfgjgWQ/s-blob-v1-IMAGE-D5fzkdo0bus.jpg" alt="s-blob-v1-IMAGE-D5fzkdo0bus" style="max-width:100%; height:auto; border:0;">
+          <div>
+            <p><strong>Common Name:</strong> Seaweed/Nori/Laver @ Korean Crispy Seaweed Snack (Spicy)</p>
+            <p><strong>Scientific Name:</strong> <i>Pyropia yezoensis</i></p>
+            <p><strong>Ingredients:</strong> Seaweed (Pyropia yezoensis) 70%,Canola oil, Chili oil 8%
+(Soybean oil, Chili flavor seasoning oil, Spicy falvor seasoning powder 
+KC 5%(spicy flavor seasoning powder, Dextrin, Kimchi flavor powder, 
+monosodium glutamate, Refined salt)</p>
+            <p><strong>Producer:</strong> KWANGCHEONKIM Co.,Ltd</p>
+            <p><strong>Purpose/Benefits:</strong> <br>
+			-Snack Purpose<br>
+			-Low in calories (only 20 kcal per pack)<br>
+			-Contains iodine, vitamins (A, C, and B complex), and minerals like calcium and iron<br>
+			-Contains antioxidants and fiber</p>
+          </div>
+        </div>
+        <div class="card-item">
+          <img src="https://i.ibb.co/CKFZ0DH5/s-blob-v1-IMAGE-UXd-FDpz-Vfbk.jpg" alt="Image 2" style="max-width:100%; height:auto; border:0;">
+          <div>
+            <p><strong>Common Name:</strong> Seaweed/Nori/Laver @ Grilled Seaweed Roll (Spicy Flavour)</p>
+            <p><strong>Scientific Name:</strong> <i>Porphyra tenera</i> / <i>Pyropia yezoensis</i> (no mentioned) @ <i>Porphyra</i> spp.</p>
+            <p><strong>Ingredients:</strong> Seaweed (95%), Grilled spicy flavour seasoning [Sugar 1.75%, Smoked flavour powder
+(Natural Flavour) 0.92%, Hydrolyzed soy protein 0.84%, Chili powder 0.55%, Salt 0.49%,
+Flavour enhancer (INS627, INS631) 0.45%] (5%)</p>
+            <p><strong>Producer:</strong> Taokaenoi Food & Marketing Public Company Limited</p>
+            <p><strong>Purpose/Benefits:</strong> <br>
+			-Low in calories (10 kcal per serving)<br>
+			-Contains dietary fiber and minerals (iodine, calcium, magnesium, iron)<br>
+			-Provides a crispy, flavorful, plant-based snack option</p>
+          </div>
+        </div>
+		<div class="card-item">
+          <img src="https://i.ibb.co/FkkP4kMD/s-blob-v1-IMAGE-8-ASrnxc4i-GI.jpg" alt="Image 3" style="max-width:100%; height:auto; border:0;">
+          <div>
+            <p><strong>Common Name:</strong> Seaweed/Nori/Laver @ Grilled Seaweed Snack (Hot & Spicy Flavour)</p>
+            <p><strong>Scientific Name:</strong> <i>Porphyra tenera</i> / <i>Pyropia yezoensis</i> (no mentioned) @ <i>Porphyra</i> spp.</p>
+            <p><strong>Ingredients:</strong> Seaweed (95%), Grilled spicy flavour seasoning [Sugar 1.75%, Smoked flavour 
+powder(Natural Flavour), Hydrolyzed soy protein, Chili powder 0.55%, Salt 0.49%, Flavour 
+enhancer (INS627, INS631)] (5%)</p>
+            <p><strong>Producer:</strong> Taokaenoi Food & Marketing Public Company Limited</p>
+            <p><strong>Purpose/Benefits:</strong> <br>
+			-Rich in minerals (iodine, calcium, magnesium, and iron)<br>
+			-Natural antioxidants from seaweed that helps fight free radicals<br>
+			-Low calorie content </p>
+          </div>
+        </div>
+		<div class="card-item">
+          <img src="https://i.ibb.co/5WSYnSwZ/s-blob-v1-IMAGE-jo-Oy-N8-PLHkg.jpg" alt="Image 4" style="max-width:100%; height:auto; border:0;">
+          <div>
+            <p><strong>Common Name:</strong> Laverland Crunch Wasabi</p>
+            <p><strong>Scientific Name:</strong> <i>Porphyra tenera</i> / <i>Pyropia yezoensis</i> (no mentioned) @ <i>Porphyra</i> spp.</p>
+            <p><strong>Ingredients:</strong> Seaweed (65%), Corn Oil, Wasabi Seasoning {Wasabi powder(Mustard flavor, Salt, Soybean)}, Salt</p>
+            <p><strong>Producer:</strong> Manjun Foods Co., LTD.</p>
+            <p><strong>Purpose/Benefits:</strong> <br>
+			-Snack food<br>
+			-Convenient source of seaweed nutrients in a portable form<br>
+			-Healthy alternative to high-calorie snacks </p>
+          </div>
+        </div>
+		<div class="card-item">
+          <img src="https://i.ibb.co/6R3Cq4P7/s-blob-v1-IMAGE-28a-Hi-R1-Gxq8.jpg" alt="Image 5" style="max-width:100%; height:auto; border:0;">
+          <div>
+            <p><strong>Common Name:</strong> Noi Crispy Tempura Seaweed Snack - Spicy Flavour (Noi Brand)</p>
+            <p><strong>Scientific Name:</strong> <i>Porphyra tenera</i> / <i>Pyropia yezoensis</i> (no mentioned) @ <i>Porphyra</i> spp.</p>
+            <p><strong>Ingredients:</strong> Wheat Flour (31%), Seaweed (Pyropia spp.) (25.4%), Rice Flour (11.5%), Spicy Seasoning {Sugar, Salt, Chili, Onion, Garlic, 
+			Yeast Extract, Flavour Enhancer [Monosodium Glutamate (INS 621), Disodium 5′-ribonucleotides (INS 635)]} (7.5%), Modified Corn Starch (7%), Palm Olein (7%), 
+			White Sesame Seeds (3.6%), Acidity Regulator (Citric Acid, INS 330), Anti-caking Agent (Silicon Dioxide, INS 551), Egg White Powder, Packaging Gas (Nitrogen, INS 941).</p>
+            <p><strong>Producer:</strong> TG Shian Wang Food (Thailand) CO., LTD</p>
+            <p><strong>Purpose/Benefits:</strong><br>
+			-flavorful and enjoyable snack<br>
+			-source of nutrients (iodine, iron, calclium, vitamin A, C, E, K and dietary fiber)<br>
+			-Heart and Cholesterol benefits </p>
+          </div>
+        </div>
+		<div class="card-item">
+          <img src="https://i.ibb.co/tTXppSYD/s-blob-v1-IMAGE-cif-Dk6d2-UYw.jpg" alt="Image 6" style="max-width:100%; height:auto; border:0;">
+          <div>
+            <p><strong>Common Name:</strong> Noi Crispy Tempura Seaweed Snack - Spicy Flavour (Noi Brand)</p>
+            <p><strong>Scientific Name:</strong> <i>Porphyra tenera</i> / <i>Pyropia yezoensis</i> (no mentioned) @ <i>Porphyra</i> spp.</p>
+            <p><strong>Ingredients:</strong> Wheat Flour (31%), Seaweed (Pyropia spp.) (25.4%), Rice Flour (11.5%), Wasabi Seasoning 
+			{Sugar, Salt, Garlic, Pepper, Wasabi Flavour, Flavour Enhancer [Monosodium Glutamate (INS 621), Disodium 5’-ribonucleotides (INS 635)]} (7.5%), 
+			Palm Olein (7%), Modified Corn Starch (7%), White Sesame Seeds (3.6%), Egg White Powder, Packaging Gas [Nitrogen (INS 941)].</p>
+            <p><strong>Producer:</strong> TG Shian Wang Food (Thailand) CO., LTD</p>
+            <p><strong>Purpose/Benefits:</strong><br>
+			-Nutrient-rich snack<br>
+			-Convenient, ready-to-eat and long shelf life snacks</p>
+          </div>
+        </div>
+		<div class="card-item">
+          <img src="https://i.ibb.co/twFkrMHn/s-blob-v1-IMAGE-yr-T90-Kb-N6-K8.jpg" alt="Image 7" style="max-width:100%; height:auto; border:0;">
+          <div>
+            <p><strong>Common Name:</strong> Hidaka Kombu</p>
+            <p><strong>Scientific Name:</strong> <i>Saccharina angustata/Laminaria angustata</i></p>
+            <p><strong>Ingredients:</strong> 100% kombu seaweed</p>
+            <p><strong>Producer:</strong> Daichu Foods Co., Ltd.</p>
+            <p><strong>Purpose/Benefits:</strong> Kelp is primarily used in cooking, for making soup bases, simmered dishes, kelp rolls, and tsukudani (simmered dishes). 
+			Kelp is rich in minerals, dietary fiber, and glutamic acid, which can enhance the umami flavor of soup bases and provide a umami taste for vegetarians.</p>
+          </div>
+        </div>
+		<div class="card-item">
+          <img src="https://i.ibb.co/7d1wtZcJ/s-blob-v1-IMAGE-e-V6d-nc-W998.jpg" alt="Image 8" style="max-width:100%; height:auto; border:0;">
+          <div>
+            <p><strong>Common Name:</strong> Dried brown seaweed</p>
+            <p><strong>Scientific Name:</strong> <i>Undaria pinnatifida</i></p>
+            <p><strong>Ingredients:</strong> 100% Dried Brown Seaweed</p>
+            <p><strong>Producer:</strong> Godbawee Food Co., Ltd.，Myeongcheon-dong, Boryeong-si, Chungcheongnam-do, South Korea.</p>
+            <p><strong>Purpose/Benefits:</strong> Commonly used in Korean cuisine, especially in seaweed soup, salads, or stir-fries. 
+			Rich in minerals, dietary fiber, and glutamic acid.</p>
+          </div>
+        </div>
+		<div class="card-item">
+          <img src="https://i.ibb.co/S75Fs7Z4/s-blob-v1-IMAGE-7-UEv-Un-PQck-E.jpg" alt="Image 9" style="max-width:100%; height:auto; border:0;">
+          <div>
+            <p><strong>Common Name:</strong> Dried Seaweed Salad Mix</p>
+            <p><strong>Scientific Name:</strong> <i>Undaria pinnatifida</i></p>
+            <p><strong>Ingredients:</strong> e.g., wakame, stem wakame, red seaweeds, kelp</p>
+            <p><strong>Producer:</strong> 60-24 Imori-cho, Seiro Town, Kita-Kanbara­gun, Niigata Prefecture, Japan.</p>
+            <p><strong>Purpose/Benefits:</strong> After soaking, it can be used in salads or as a side dish, or as a pickled plum. It is low in calories and rich in dietary fiber and minerals.</p>
+          </div>
+        </div>
+		<div class="card-item">
+          <img src="https://i.ibb.co/DPKybmFN/s-blob-v1-IMAGE-c-QNKOVt-H45w.jpg" alt="Image 10" style="max-width:100%; height:auto; border:0;">
+          <div>
+            <p><strong>Common Name:</strong> -</p>
+            <p><strong>Scientific Name:</strong> -</p>
+            <p><strong>Ingredients:</strong> -</p>
+            <p><strong>Producer:</strong> -</p>
+            <p><strong>Purpose/Benefits:</strong> -</p>
+          </div>
+        </div>
+		<div class="card-item">
+          <img src="https://i.ibb.co/VWTx1M0p/s-blob-v1-IMAGE-t-ROaofsk-SM0.jpg" alt="Image 11" style="max-width:100%; height:auto; border:0;">
+          <div>
+            <p><strong>Common Name:</strong> -</p>
+            <p><strong>Scientific Name:</strong> -</p>
+            <p><strong>Ingredients:</strong> -</p>
+            <p><strong>Producer:</strong> -</p>
+            <p><strong>Purpose/Benefits:</strong> -</p>
+          </div>
+        </div>
+		<div class="card-item">
+          <img src="https://i.ibb.co/d0pqPC78/s-blob-v1-IMAGE-We2d-SORh-Ac.jpg" alt="Image 12" style="max-width:100%; height:auto; border:0;">
+          <div>
+            <p><strong>Common Name:</strong> -</p>
+            <p><strong>Scientific Name:</strong> -</p>
+            <p><strong>Ingredients:</strong> -</p>
+            <p><strong>Producer:</strong> -</p>
+            <p><strong>Purpose/Benefits:</strong> -</p>
+          </div>
+        </div>
+		<div class="card-item">
+          <img src="https://i.ibb.co/Vcx2Yxwx/s-blob-v1-IMAGE-x-FRYWUYqr-Y.jpg" alt="Image 13" style="max-width:100%; height:auto; border:0;">
+          <div>
+            <p><strong>Common Name:</strong> King Oyster Mushroom</p>
+            <p><strong>Scientific Name:</strong> <i>Pleurotus eryngii</i></p>
+            <p><strong>Ingredients:</strong> King Oyster mushrooms (100%)</p>
+            <p><strong>Producer:</strong> Shenzhen Maoxiong Industrial Co Ltd</p>
+            <p><strong>Purpose/Benefits:</strong> Rich in protein and dietary fiber, Low in fat and calories, Contains antioxidants, Good source of B vitamins</p>
+          </div>
+        </div>
+		<div class="card-item">
+          <img src="https://i.ibb.co/nNMZzmwb/s-blob-v1-IMAGE-r2-EPExbsf-Sk.jpg" alt="Image 14" style="max-width:100%; height:auto; border:0;">
+          <div>
+            <p><strong>Common Name:</strong> Brown Button Mushroom</p>
+            <p><strong>Scientific Name:</strong> <i>Agaricus bisporus</i></p>
+            <p><strong>Ingredients:</strong> Brown Button mushrooms (100%)</p>
+            <p><strong>Producer:</strong> Champ Fungi Sdn. Bhd</p>
+            <p><strong>Purpose/Benefits:</strong> Rich in nutrients, Supports immune function, Promotes metabolism, Good source of dietary fiber</p>
+          </div>
+        </div>
+		<div class="card-item">
+          <img src="https://i.ibb.co/N6nmfCFZ/s-blob-v1-IMAGE-b-HEn2-WBOtvs.jpg" alt="Image 15" style="max-width:100%; height:auto; border:0;">
+          <div>
+            <p><strong>Common Name:</strong> Portobello Mushroom</p>
+            <p><strong>Scientific Name:</strong> <i>Agaricus bisporus</i></p>
+            <p><strong>Ingredients:</strong> Portobello mushrooms (100%)</p>
+            <p><strong>Producer:</strong> Fungiculture Asia Sdn Bhd</p>
+            <p><strong>Purpose/Benefits:</strong> High in nutrients. Boosts immune system. Supports metabolism and energy. Low in calories and fat.</p>
+          </div>
+        </div>
+		<div class="card-item">
+          <img src="https://i.ibb.co/BH3nKv7V/s-blob-v1-IMAGE-s-DMSDzr-P7-Ys.jpg" alt="Image 16" style="max-width:100%; height:auto; border:0;">
+          <div>
+            <p><strong>Common Name:</strong> Cauliflower Mushroom</p>
+            <p><strong>Scientific Name:</strong> <i>Sparassis crispa</i></p>
+            <p><strong>Ingredients:</strong> Fresh cauliflower mushroom (100%)</p>
+            <p><strong>Producer:</strong> Yili Biotech Mushroom (based on the “Yili Biotech” label on packaging)</p>
+            <p><strong>Purpose/Benefits:</strong> <br>
+			-Edible fungus with a mild, nutty flavor and crisp texture<br>
+			-Rich in dietary fiber, polysaccharides, and antioxidants<br>
+			-May help improve immunity and gut health<br>
+			-Commonly used in soups, stir-fries, or as a meat substitute</p>
+          </div>
+        </div>
+		<div class="card-item">
+          <img src="https://i.ibb.co/GQRJMw76/s-blob-v1-IMAGE-pf-Clw-Fnvjs.jpg" alt="Image 17" style="max-width:100%; height:auto; border:0;">
+          <div>
+            <p><strong>Common Name:</strong> Enoki Mushroom</p>
+            <p><strong>Scientific Name:</strong> <i>Flammulina velutipes</i></p>
+            <p><strong>Ingredients:</strong> Fresh enoki mushroom (100%)</p>
+            <p><strong>Producer:</strong> Yili Biotech Mushroom (same producer label)</p>
+            <p><strong>Purpose/Benefits:</strong> <br>
+			-Contains vitamins B, D, and minerals like potassium and iron<br>
+			-Low in calories, supports immune and heart health<br>
+			-Commonly used in hotpots, soups, and salads for its crunchy texture</p>
+          </div>
+        </div>
+  </div>
+
+  <a href="index.html#projects" class="back-btn">← Back to Projects</a>
+
+</div>
+
+</body>
+</html>
 
