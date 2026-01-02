@@ -109,7 +109,6 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
   padding-top: 0;
 
-  /* center content vertically and horizontally */
   display: flex;
   justify-content: center; 
   align-items: center;     
@@ -144,14 +143,14 @@ body::-webkit-scrollbar-thumb {
   line-height: 1.4;
 }
 .card-item strong {
-  display: inline; /* keep Description: inline */
+  display: inline;
 }
 
 /* Card colors */
-.card-green  { background-color: #d0f0c0; }   /* pastel green */
-.card-blue   { background-color: #c0e4ff; }   /* pastel blue */
-.card-yellow { background-color: #fff5b7; }   /* pastel yellow */
-.card-grey   { background-color: #e0e0e0; }   /* light grey */
+.card-green  { background-color: #d0f0c0; } 
+.card-blue   { background-color: #c0e4ff; } 
+.card-yellow { background-color: #fff5b7; } 
+.card-grey   { background-color: #e0e0e0; } 
 
 /* Table Styling inside card */
 .card-item table {
@@ -235,7 +234,7 @@ body {
     <p>Welcome to our website for the Economic Botany practical project. This site <br>
        presents a curated collection of practical projects. <br>
        Each practical will be updated in this website.</p>
-       <p>We have updated this website to patch 3.0</p>
+    <p>We have updated this website to patch 3.0</p>
   </div>
 </div>
 
@@ -250,7 +249,6 @@ body {
 <!-- PROJECT INFO -->
 <div class="product-info" id="projects">
   <h2 style="text-align:center; margin-top: 40px;">Our Projects</h2>
-
   <div class="product-cards">
 
     <!-- Practical 1 -->
@@ -355,6 +353,131 @@ document.querySelectorAll('.product-card').forEach(card => {
       window.location.href = link;
     }
   });
+});
+</script>
+
+<!-- NEW YEAR 2026 POPUP AND GIFS -->
+<div id="newYearPopup" style="
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255,255,255,0.95);
+    padding: 20px 30px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff5722;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    display: none;
+    z-index: 2000;
+">
+    🎉 Happy New Year 2026! 🎉
+</div>
+
+<img id="newYearGIFRight" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2pxdm9mc2duZHYxb3lpdzFqOXJlNXhtcmxraHlyNDNwc250bmF1cSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3UkqVq3F50bVCi9URl/giphy.gif" alt="Dancing Cat" style="
+    position: fixed;
+    top: 20%;
+    left: calc(50% + 300px);
+    transform: translateY(-50%);
+    width: 150px;
+    z-index: 1999;
+    display: none;
+">
+
+<img id="newYearGIFLeft" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2pxdm9mc2duZHYxb3lpdzFqOXJlNXhtcmxraHlyNDNwc250bmF1cSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/RjVP4ZoxA3xeReLQT0/giphy.gif" alt="Dancing Cat 2 GIF" style="
+    position: fixed;
+    top: 20%;
+    left: calc(50% - 350px);
+    transform: translateY(-50%);
+    width: 150px;
+    z-index: 1999;
+    display: none;
+">
+
+<!-- DISCO OVERLAY -->
+<div id="discoOverlay" style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 3000;
+"></div>
+
+<script>
+// Simple confetti function
+function createConfetti() {
+    const colors = ['#ff5252','#ffb74d','#4dd0e1','#81c784','#ffd54f'];
+    for (let i = 0; i < 100; i++) {
+        const confetti = document.createElement('div');
+        confetti.style.position = 'fixed';
+        confetti.style.width = '10px';
+        confetti.style.height = '10px';
+        confetti.style.backgroundColor = colors[Math.floor(Math.random()*colors.length)];
+        confetti.style.top = Math.random()*window.innerHeight + 'px';
+        confetti.style.left = Math.random()*window.innerWidth + 'px';
+        confetti.style.opacity = Math.random();
+        confetti.style.transform = `rotate(${Math.random()*360}deg)`;
+        confetti.style.zIndex = 1998;
+        document.body.appendChild(confetti);
+
+        const fall = () => {
+            const top = parseFloat(confetti.style.top);
+            if(top < window.innerHeight){
+                confetti.style.top = top + 2 + 'px';
+                requestAnimationFrame(fall);
+            } else {
+                confetti.remove();
+            }
+        };
+        fall();
+    }
+}
+
+// Disco effect
+function startDisco() {
+    const overlay = document.getElementById('discoOverlay');
+    const colors = ['#ff0000','#00ff00','#0000ff','#ffff00','#ff00ff','#00ffff','#ffffff'];
+    return setInterval(() => {
+        const color1 = colors[Math.floor(Math.random()*colors.length)];
+        const color2 = colors[Math.floor(Math.random()*colors.length)];
+        const angle = Math.floor(Math.random()*360);
+        overlay.style.background = `linear-gradient(${angle}deg, ${color1}, ${color2})`;
+        overlay.style.opacity = 0.3 + Math.random()*0.4;
+    }, 100);
+}
+
+// Trigger celebration by pressing "6"
+let discoActive = false; // prevent multiple triggers
+document.addEventListener('keydown', (e) => {
+    if (e.key === '6' && !discoActive) {
+        discoActive = true;
+
+        const popup = document.getElementById('newYearPopup');
+        const gifRight = document.getElementById('newYearGIFRight');
+        const gifLeft = document.getElementById('newYearGIFLeft');
+
+        // Show everything
+        popup.style.display = 'block';
+        gifRight.style.display = 'block';
+        gifLeft.style.display = 'block';
+
+        createConfetti();
+        const discoInterval = startDisco();
+
+        // Hide everything after 5 seconds
+        setTimeout(() => {
+            popup.style.display = 'none';
+            gifRight.style.display = 'none';
+            gifLeft.style.display = 'none';
+            clearInterval(discoInterval); // stop disco
+            document.getElementById('discoOverlay').style.background = 'none';
+            discoActive = false; // allow triggering again
+        }, 6000);
+    }
 });
 </script>
 
