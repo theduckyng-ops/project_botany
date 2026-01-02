@@ -71,37 +71,63 @@ body::-webkit-scrollbar-thumb {
   max-width: 900px;
   margin: 40px auto 0;
 }
+
+/* Cards */
 .product-card {
   width: 100%;
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  padding: 20px;
-  text-align: left;
-  cursor: pointer;
+  cursor: pointer; 
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
 }
+
+/* Hover effect */
 .product-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
+
+/* Card text */
 .product-card h3 {
   margin: 10px 0;
   color: #333;
 }
 
-/* Accordion content for multiple images */
+/* Accordion content for hover */
 .card-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease;
+  transition: max-height 0.5s ease, padding-top 0.5s ease;
+  width: 100%;
   padding-top: 0;
+
+  /* center content vertically and horizontally */
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
 }
+
+/* Expand on hover */
+.product-card:hover .card-content {
+  max-height: 1000px; 
+  padding-top: 20px;
+}
+
+/* Card item inside content */
 .card-item {
   display: flex;
+  flex-direction: row;
   gap: 15px;
-  margin-bottom: 20px;
   align-items: flex-start;
+  max-width: 800px;
 }
 .card-item img {
   width: 200px;
@@ -111,8 +137,15 @@ body::-webkit-scrollbar-thumb {
 }
 .card-item div {
   flex: 1;
+  text-align: left;
 }
-.card-item p { margin: 5px 0; }
+.card-item p { 
+  margin: 0; 
+  line-height: 1.4;
+}
+.card-item strong {
+  display: inline; /* keep Description: inline */
+}
 
 /* Card colors */
 .card-green  { background-color: #d0f0c0; }   /* pastel green */
@@ -120,7 +153,7 @@ body::-webkit-scrollbar-thumb {
 .card-yellow { background-color: #fff5b7; }   /* pastel yellow */
 .card-grey   { background-color: #e0e0e0; }   /* light grey */
 
-/* Table Styling */
+/* Table Styling inside card */
 .card-item table {
   width: 100%;
   border-collapse: collapse;
@@ -180,7 +213,6 @@ body::-webkit-scrollbar-thumb {
 body {
   padding-top: 60px;
 }
-
 </style>
 <title>Projects of Economic Botany (SIE3006)</title>
 </head>
@@ -193,7 +225,6 @@ body {
     <a href="#heroImage">Home</a>
     <a href="#projects">Projects</a>
     <a href="#fieldtrip-card" id="fieldtrip-link">Field Trip</a>
-
   </div>
 </div>
 
@@ -204,13 +235,14 @@ body {
     <p>Welcome to our website for the Economic Botany practical project. This site <br>
        presents a curated collection of practical projects. <br>
        Each practical will be updated in this website.</p>
+       <p>We have updated this website to patch 3.0</p>
   </div>
 </div>
 
 <!-- CREDITS -->
 <div class="credits-section">
   <p>Created by: <strong>Danieal Ng Kar Him, Lee Shu En, Cally Yew Sim Yue, <br>
-  Lim Wen Kai, Ackash Kumar, Zhang Mengqi and Yang haoran</strong></p>
+  Lim Wen Kai, Ackash Kumar, Zhang Mengqi and Yang Haoran</strong></p>
   <p>Course Project: Practical Economic Botany</p>
   <p>Universiti Malaya</p>
 </div>
@@ -225,6 +257,12 @@ body {
     <div class="product-card card-green" data-link="practical1.html">
       <h3>Practical 1 (Algae and Mushroom)</h3>
       <div class="card-content">
+        <div class="card-item">
+          <img src="https://i.ibb.co/5WSYnSwZ/s-blob-v1-IMAGE-jo-Oy-N8-PLHkg.jpg" alt="Algae & Mushroom">
+          <div>
+            <p><strong>Description:</strong> Identification of commercialized algae and mushroom products in the local market, including their common name, scientific name, ingredients, producer, and intended purpose or benefits.</p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -232,31 +270,47 @@ body {
     <div class="product-card card-blue" data-link="practical2.html">
       <h3>Practical 2 (Ferns)</h3>
       <div class="card-content">
+        <div class="card-item">
+          <img src="https://i.ibb.co/TxgJpJLb/f792f007-09e4-4c94-89af-f40a154df25e.jpg" alt="Ferns">
+          <div>
+            <p><strong>Description:</strong> Records of fern taxonomy, key features, and habitat. This section also includes their botanical illustrations.</p>
+          </div>
+        </div>
       </div>
     </div>
 
-<!-- Field Trip Report -->
-<div class="product-card card-yellow" id="fieldtrip-card" data-link="fieldtrip.html">
-  <h3>Field Trip Report</h3>
-  <div class="card-content">
-  </div>
-</div>
+    <!-- Field Trip Report -->
+    <div class="product-card card-yellow" id="fieldtrip-card" data-link="fieldtrip.html">
+      <h3>Field Trip Report</h3>
+      <div class="card-content">
+        <div class="card-item">
+          <img src="https://i.ibb.co/DDP0986H/photo-2026-01-02-15-08-44.jpg" alt="Field Trip">
+          <div>
+            <p><strong>Description:</strong> Document field trip findings and observations. The data are presented in a table for each house, showing the species observed and the number of species owned by each homeowner.</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<!-- Placeholder -->
+    <!-- Placeholder -->
     <div class="product-card card-grey">
       <h3>Waiting to be updated</h3>
       <div class="card-content">
-        <p>New project will be added soon.</p>
+        <div class="card-item">
+          <p>New project will be added soon.</p>
+        </div>
       </div>
     </div>
-	
-<script>
 
-/* HERO IMAGE ROTATION */
+  </div>
+</div>
+
+<!-- HERO IMAGE ROTATION -->
+<script>
 const images = [
   "https://cdn.pixabay.com/photo/2023/08/15/11/47/mushroom-8191823_1280.jpg",
   "https://cdn.pixabay.com/photo/2020/06/21/07/08/lichen-5323493_1280.jpg",
-  "https://cdn.pixabay.com/photo/2013/04/04/16/06/lichen-100432_1280.jpg"
+  "https://i.ibb.co/dwM2DkFd/photo-2026-01-02-15-08-49.jpg"
 ];
 
 let index = 0;
@@ -292,29 +346,16 @@ changeImage();
 setInterval(changeImage, 5000);
 </script>
 
+<!-- Card click navigation -->
 <script>
-  document.getElementById('fieldtrip-link').addEventListener('click', function(e) {
-    e.preventDefault(); // prevent default jump
-    const fieldTripCard = document.getElementById('fieldtrip-card');
-    const cardContent = fieldTripCard.querySelector('.card-content');
-    
-    // Expand the card
-    cardContent.style.maxHeight = cardContent.scrollHeight + "px";
-    
-    // Scroll smoothly to it
-    fieldTripCard.scrollIntoView({ behavior: "smooth" });
+document.querySelectorAll('.product-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const link = card.dataset.link;
+    if (link) {
+      window.location.href = link;
+    }
   });
-</script>
-
-<script>
-  document.querySelectorAll('.product-card').forEach(card => {
-    card.addEventListener('click', () => {
-      const link = card.dataset.link;
-      if (link) {
-        window.location.href = link;
-      }
-    });
-  });
+});
 </script>
 
 </body>
