@@ -17,6 +17,7 @@ body {
     max-width: 1000px;
     margin: 20px auto 40px auto; /* reduce top margin from 90px → 20px */
     padding: 20px;
+	padding-left: 180px;
 }
 
 h1 {
@@ -133,6 +134,67 @@ tbody tr:nth-child(even) {
     color: #333;
   }
 
+/* GOOGLE SHEET SOURCE LINK */
+.data-source {
+  position: fixed;
+  bottom: 15px;
+  right: 20px;
+  font-size: 13px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 6px 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  z-index: 999;
+}
+
+.data-source a {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.data-source a:hover {
+  text-decoration: underline;
+}
+
+/* LEFT SIDE NAVIGATION */
+.side-nav {
+  position: fixed;
+  top: 70px;
+  left: 20px;
+  width: 150px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+  padding: 15px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+  font-size: 14px;
+  z-index: 900;
+}
+
+.side-nav h3 {
+  margin: 0 0 12px 0;
+  font-size: 15px;
+  text-align: center;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.side-nav a {
+  display: block;
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  text-decoration: none;
+  color: #eeeeee;
+  border-radius: 8px;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.side-nav a:hover {
+  background: rgba(144, 202, 249, 0.25); /* same blue accent */
+  color: #90caf9;
+}
+
 </style>
 
 </head>
@@ -148,6 +210,23 @@ tbody tr:nth-child(even) {
   </div>
 </div>
 
+<!-- LEFT SIDE NAV -->
+<div class="side-nav">
+  <h3>Houses</h3>
+  <a href="#house1">House 1</a>
+  <a href="#house2">House 2</a>
+  <a href="#house3">House 3</a>
+  <a href="#house4">House 4</a>
+  <a href="#house5">House 5</a>
+  <a href="#house6">House 6</a>
+  <a href="#house7">House 7</a>
+  <a href="#house8">House 8</a>
+  <a href="#house9">House 9</a>
+  <a href="#house10">House 10</a>
+  <a href="#house11">House 11</a>
+  <a href="#house12">House 12</a>
+</div>
+
 <div class="content-wrapper">
 
 <h1>Field Trip Report</h1>
@@ -158,7 +237,7 @@ tbody tr:nth-child(even) {
 </p>
 
 <!-- HOUSE 1 -->
-<div class="card-item" style="display:flex; gap:20px; align-items:flex-start;">
+<div class="card-item" style="display:flex; gap:20px; align-items:flex-start;" id="house1">
 <img src="https://i.ibb.co/TD5QSsPw/IMG-3680.jpg" alt="House 1"
        style="width:180px; border-radius:10px; object-fit:cover;">
   <div>
@@ -179,18 +258,18 @@ tbody tr:nth-child(even) {
           <td>18</td>
         </tr>
         <tr>
-          <td>N/A</td>
+          <td><i>Carica papaya</i></td>
           <td>Papaya</td>
           <td>1</td>
         </tr>
         <tr>
-          <td><i>Cocos</i> sp.</td>
+          <td><i>Cocos nucifera</i></td>
           <td>Coconut</td>
           <td>3</td>
         </tr>
         <tr>
-          <td><i>Manihot esculenta</i></td>
-          <td>Cassava</td>
+          <td><i>Pouteria caimito</i></td>
+          <td>Abiu</td>
           <td>10</td>
         </tr>
         <tr>
@@ -199,13 +278,13 @@ tbody tr:nth-child(even) {
           <td>10</td>
         </tr>
         <tr>
-          <td>N/A</td>
+          <td><i>Cordyline</i> sp.</td>
           <td>Unknown</td>
           <td>2</td>
         </tr>
         <tr>
-          <td>N/A</td>
-          <td>Unknown</td>
+          <td><i>Alocasia macrorrhizos</i></td>
+          <td>Giant Taro</td>
           <td>7</td>
         </tr>
       </tbody>
@@ -214,7 +293,7 @@ tbody tr:nth-child(even) {
 </div>
 
 			<!-- HOUSE 2 -->
-			<div class="card-item" style="display:flex; gap:20px; align-items:flex-start;">
+			<div class="card-item" style="display:flex; gap:20px; align-items:flex-start;" id="house2">
 <img src="https://i.ibb.co/6cn0qNq1/IMG-3697.jpg" alt="House 2"
        style="width:180px; border-radius:10px; object-fit:cover;">
 			  <div>
@@ -240,18 +319,18 @@ tbody tr:nth-child(even) {
 					  <td>3</td>
 					</tr>
 					<tr>
-					  <td>N/A</td>
-					  <td>Palm tree</td>
+					  <td><i>Pometia pinnata</i></td>
+					  <td>Matoa</td>
 					  <td>4</td>
 					</tr>
 					<tr>
-					  <td><i>Musa</i>sp.</td>
+					  <td><i>Musa</i> sp.</td>
 					  <td>Banana tree</td>
 					  <td>25</td>
 					</tr>
 					<tr>
-					  <td>N/A</td>
-					  <td>Black magic tree?</td>
+					  <td><i>Psidium cattleyanum</i></td>
+					  <td>Purple guava</td>
 					  <td>3</td>
 					</tr>
 					<tr>
@@ -270,7 +349,7 @@ tbody tr:nth-child(even) {
 			</div>
 			
 <!-- HOUSE 3 -->
-<div class="card-item" style="display:flex; gap:20px; align-items:flex-start;">
+<div class="card-item" style="display:flex; gap:20px; align-items:flex-start;" id="house3">
 <img src="https://i.ibb.co/KcgxX47L/IMG-3717.jpg" alt="House 3"
        style="width:180px; border-radius:10px; object-fit:cover;">
   <div>
@@ -301,12 +380,12 @@ tbody tr:nth-child(even) {
           <td>15</td>
         </tr>
         <tr>
-          <td><i>Cocos</i> sp.</td>
+          <td><i>Cocos</i> nucifera</td>
           <td>Coconut</td>
           <td>2</td>
         </tr>
         <tr>
-          <td>N/A</td>
+          <td><i>Capsicum annuum</i></td>
           <td>Chili</td>
           <td>2</td>
         </tr>
@@ -331,7 +410,7 @@ tbody tr:nth-child(even) {
 </div>
 
 <!-- HOUSE 4 -->
-<div class="card-item" style="display:flex; gap:20px; align-items:flex-start;">
+<div class="card-item" style="display:flex; gap:20px; align-items:flex-start;" id="house4">
 <img src="https://i.ibb.co/WWzNfQZX/IMG-3729.jpg" alt="House 4"
        style="width:180px; border-radius:10px; object-fit:cover;">
   <div>
@@ -352,12 +431,12 @@ tbody tr:nth-child(even) {
           <td>2</td>
         </tr>
         <tr>
-          <td><i>Musa</i> sp.</td>
+          <td><i>Musa acuminata</i></td>
           <td>Banana tree</td>
           <td>15</td>
         </tr>
         <tr>
-          <td><i>Cocos</i> sp.</td>
+          <td><i>Cocos nucifera</i></td>
           <td>Coconut</td>
           <td>2</td>
         </tr>
@@ -367,13 +446,8 @@ tbody tr:nth-child(even) {
           <td>2</td>
         </tr>
         <tr>
-          <td><i>Rhodomyrtus tomentosa</i></td>
-          <td>Rose Myrtle</td>
-          <td>1</td>
-        </tr>
-        <tr>
-          <td>N/A</td>
-          <td>Timber (Merbau ?)</td>
+          <td><i>Lagerstroemia indica</i></td>
+          <td>Crepe Myrtle</td>
           <td>1</td>
         </tr>
       </tbody>
@@ -382,7 +456,7 @@ tbody tr:nth-child(even) {
 </div>
 
 <!-- HOUSE 5 -->
-<div class="card-item" style="display:flex; gap:20px; align-items:flex-start;">
+<div class="card-item" style="display:flex; gap:20px; align-items:flex-start;" id="house5">
 <img src="https://i.ibb.co/1JRxW5JV/IMG-3744.jpg" alt="House 5"
        style="width:180px; border-radius:10px; object-fit:cover;">
   <div>
@@ -403,8 +477,8 @@ tbody tr:nth-child(even) {
           <td>4</td>
         </tr>
         <tr>
-          <td><i>Jasminum</i> sp.</td>
-          <td>Jasmine Flower</td>
+          <td><i>Tabaernaemontana divaricata</i></td>
+          <td>Pinwheel Jasmine</td>
           <td>10</td>
         </tr>
         <tr>
@@ -428,14 +502,9 @@ tbody tr:nth-child(even) {
           <td>30</td>
         </tr>
         <tr>
-          <td><i>Arundina</i> sp.</td>
+          <td><i>Arundina gramnifolia</i></td>
           <td>Bamboo Orchid</td>
           <td>14</td>
-        </tr>
-		<tr>
-          <td><i>Arundina</i> sp.</td>
-          <td>Bamboo Orchid</td>
-          <td>2</td>
         </tr>
 		<tr>
           <td><i>Citrus x microcarpa</i></td>
@@ -488,12 +557,12 @@ tbody tr:nth-child(even) {
           <td>1</td>
         </tr>
 		<tr>
-          <td><i>Amaranthus</i> sp.</td>
-          <td>Spinach</td>
+          <td><i>Eruca sativa</i></td>
+          <td>Arugula</td>
           <td>1</td>
         </tr>
 		<tr>
-          <td><i>Cocos</i> sp.</td>
+          <td><i>Cocos nucifera</i></td>
           <td>Coconut</td>
           <td>4</td>
         </tr>
@@ -508,14 +577,39 @@ tbody tr:nth-child(even) {
           <td>1</td>
         </tr>
 		<tr>
-          <td>N/A</td>
-          <td>Unknown</td>
+          <td><i>Curcuma longa</i></td>
+          <td>Tumeric</td>
+          <td>4</td>
+        </tr>
+		<tr>
+          <td><i>Ficus altissima</i></td>
+          <td>Council tree</td>
           <td>1</td>
         </tr>
 		<tr>
-          <td>N/A</td>
-          <td>Unknown</td>
+          <td><i>Leycesteria formosa</i></td>
+          <td>Flowering Nutmeg</td>
           <td>1</td>
+        </tr>
+		<tr>
+          <td><i>Aglonema</i> sp.</td>
+          <td>Chinese Evergreen</td>
+          <td>5</td>
+        </tr>
+		<tr>
+          <td><i>Crinum asiaticum</i></td>
+          <td>Spider Lily</td>
+          <td>2</td>
+        </tr>
+		<tr>
+          <td><i>Codiaeum variegatum</i></td>
+          <td>Garden croton</td>
+          <td>1</td>
+        </tr>
+		<tr>
+          <td><i>Cattleya</i> sp.</td>
+          <td>Cattleya Orchids</td>
+          <td>27</td>
         </tr>
       </tbody>
     </table>
@@ -523,7 +617,7 @@ tbody tr:nth-child(even) {
 </div>
 
 <!-- HOUSE 6 -->
-<div class="card-item" style="display:flex; gap:20px; align-items:flex-start;">
+<div class="card-item" style="display:flex; gap:20px; align-items:flex-start;" id="house6">
 <img src="https://i.ibb.co/5hZN4nqz/IMG-3755.jpg" alt="House 6"
        style="width:180px; border-radius:10px; object-fit:cover;">
   <div>
@@ -559,14 +653,9 @@ tbody tr:nth-child(even) {
           <td>8</td>
         </tr>
         <tr>
-          <td><i>Cocos</i> sp.</td>
+          <td><i>Cocos nucifera</i></td>
           <td>Coconut</td>
           <td>2</td>
-        </tr>
-        <tr>
-          <td>N/A</td>
-          <td>Palm</td>
-          <td>1</td>
         </tr>
       </tbody>
     </table>
@@ -574,7 +663,7 @@ tbody tr:nth-child(even) {
 </div>
 
 <!-- HOUSE 7 -->
-<div class="card-item" style="display:flex; gap:20px; align-items:flex-start;">
+<div class="card-item" style="display:flex; gap:20px; align-items:flex-start;" id="house7">
 <img src="https://i.ibb.co/QF2KKKhZ/IMG-3788.jpg" alt="House 7"
        style="width:180px; border-radius:10px; object-fit:cover;">
   <div>
@@ -599,6 +688,11 @@ tbody tr:nth-child(even) {
           <td>Banana</td>
           <td>7</td>
         </tr>
+		<tr>
+          <td><i>Psidium cattleyanum</i></td>
+          <td>Purple Guava</td>
+          <td>3</td>
+        </tr>
         <tr>
           <td><i>Arundina</i> sp.</td>
           <td>Bamboo Orchid</td>
@@ -609,13 +703,18 @@ tbody tr:nth-child(even) {
           <td>Coconut</td>
           <td>1</td>
         </tr>
+		<tr>
+          <td><i>Ficus</i> sp.</td>
+          <td>Fig species</td>
+          <td>1</td>
+        </tr>
       </tbody>
     </table>
   </div>
 </div>
 
 <!-- HOUSE 8 -->
-<div class="card-item" style="display:flex; gap:20px; align-items:flex-start;">
+<div class="card-item" style="display:flex; gap:20px; align-items:flex-start;" id="house8">
 <img src="https://i.ibb.co/4ntqwmNL/IMG-3795.jpg" alt="House 8"
        style="width:180px; border-radius:10px; object-fit:cover;">
   <div>
@@ -631,28 +730,28 @@ tbody tr:nth-child(even) {
       </thead>
       <tbody>
         <tr>
-          <td><i>Cocos</i> sp.</td>
+          <td><i>Cocos nucifera</i></td>
           <td>Coconut</td>
           <td>4</td>
         </tr>
         <tr>
-          <td><i> Etlingera elatior</i></td>
+          <td><i>Etlingera elatior</i></td>
           <td>Torch Ginger</td>
           <td>2</td>
         </tr>
         <tr>
-          <td><i>Jasminum</i> sp.</td>
-          <td>Jasmine Flower</td>
+          <td><i>Tabernaemontana divaricata</i></td>
+          <td>Pinwheel Jasmine</td>
           <td>5</td>
         </tr>
         <tr>
-          <td>N/A</td>
+          <td><i>Psidium cattleyanum</i></td>
           <td>Black Magic Flower</td>
           <td>2</td>
         </tr>
 		<tr>
-          <td>N/A</td>
-          <td>Unknown</td>
+          <td><i>Hibiscus rosa-sinensis</i> ‘Variegata’</td>
+          <td>Hibiscus (Variegated)</td>
           <td>1</td>
         </tr>
       </tbody>
@@ -661,7 +760,7 @@ tbody tr:nth-child(even) {
 </div>
 
 <!-- HOUSE 9 -->
-<div class="card-item" style="display:flex; gap:20px; align-items:flex-start;">
+<div class="card-item" style="display:flex; gap:20px; align-items:flex-start;" id="house9">
 <img src="https://i.ibb.co/tMYB6JRD/IMG-3808.jpg" alt="House 9"
        style="width:180px; border-radius:10px; object-fit:cover;">
   <div>
@@ -677,8 +776,8 @@ tbody tr:nth-child(even) {
       </thead>
       <tbody>
         <tr>
-          <td><i>Bougainvillea glabra</i></td>
-          <td>Paper Flower</td>
+          <td><i>Ruellia tuberosa</i></td>
+          <td>Snapdragon Root</td>
           <td>6</td>
         </tr>
         <tr>
@@ -697,7 +796,7 @@ tbody tr:nth-child(even) {
 </div>
 
 <!-- HOUSE 10 -->
-<div class="card-item" style="display:flex; gap:20px; align-items:flex-start;">
+<div class="card-item" style="display:flex; gap:20px; align-items:flex-start;" id="house10">
 <img src="https://i.ibb.co/Lhxxfk0P/IMG-3814.jpg" alt="House 10"
        style="width:180px; border-radius:10px; object-fit:cover;">
   <div>
@@ -723,7 +822,7 @@ tbody tr:nth-child(even) {
 </div>
 
 <!-- HOUSE 11 -->
-<div class="card-item" style="display:flex; gap:20px; align-items:flex-start;">
+<div class="card-item" style="display:flex; gap:20px; align-items:flex-start;" id="house11">
 <img src="https://i.ibb.co/7tZZ239n/IMG-3819.jpg" alt="House 11"
        style="width:180px; border-radius:10px; object-fit:cover;">
   <div>
@@ -759,7 +858,7 @@ tbody tr:nth-child(even) {
           <td>2</td>
         </tr>
 		<tr>
-          <td><i>Cocos</i> sp.</td>
+          <td><i>Cocos nucifera</i></td>
           <td>Coconut</td>
           <td>3</td>
         </tr>
@@ -794,12 +893,7 @@ tbody tr:nth-child(even) {
           <td>5</td>
         </tr>
 		<tr>
-          <td>N/A</td>
-          <td>Bending like plant</td>
-          <td>8</td>
-        </tr>
-		<tr>
-          <td>N/A</td>
+          <td><i>Cattleya</i> sp.</td>
           <td>Orchid</td>
           <td>2</td>
         </tr>
@@ -809,13 +903,8 @@ tbody tr:nth-child(even) {
           <td>1</td>
         </tr>
 		<tr>
-          <td>N/A</td>
-          <td>Unknown like lime</td>
-          <td>1</td>
-        </tr>
-		<tr>
-          <td>N/A</td>
-          <td>palm like plant</td>
+          <td><i>Molineria latifolia</i></td>
+          <td>Lemba</td>
           <td>3</td>
         </tr>
       </tbody>
@@ -824,7 +913,7 @@ tbody tr:nth-child(even) {
 </div>
 
 <!-- HOUSE 12 -->
-<div class="card-item" style="display:flex; gap:20px; align-items:flex-start;">
+<div class="card-item" style="display:flex; gap:20px; align-items:flex-start;" id="house12">
 <img src="https://i.ibb.co/23phTdw7/IMG-3833.jpg" alt="House 12"
        style="width:180px; border-radius:10px; object-fit:cover;">
   <div>
@@ -850,7 +939,7 @@ tbody tr:nth-child(even) {
           <td>3</td>
         </tr>
         <tr>
-          <td><i>Cocos</i> sp.</td>
+          <td><i>Cocos nucifera</i></td>
           <td>Coconut</td>
           <td>1</td>
         </tr>
@@ -875,8 +964,23 @@ tbody tr:nth-child(even) {
           <td>6</td>
         </tr>
 		<tr>
-          <td>N/A</td>
-          <td>Palm</td>
+          <td><i>Adonidia merrillii</i></td>
+          <td>Christmas Palm</td>
+          <td>1</td>
+        </tr>
+		<tr>
+          <td><i>Euphorbia lactea 'Cristata'.</i></td>
+          <td>Coral Cactus</td>
+          <td>1</td>
+        </tr>
+		<tr>
+          <td><i>Artocarpus altilis</i></td>
+          <td>Breadfruit</td>
+          <td>1</td>
+        </tr>
+		<tr>
+          <td><i>Rosa</i> sp.</td>
+          <td>Unknown rose species</td>
           <td>1</td>
         </tr>
       </tbody>
@@ -885,6 +989,13 @@ tbody tr:nth-child(even) {
 </div>
 <a href="index.html#projects" class="back-btn">← Back to Projects</a>
   </div>
-
+  
+<!-- DATA SOURCE -->
+<div class="data-source">
+  📄 Data source:
+  <a href="https://docs.google.com/document/d/17OdWzPPNVIPIAVlv0UBcitiNgkP0LIBsozgNYrl0VtQ/edit?usp=sharing" target="_blank">
+    Google Sheet
+  </a>
+</div>
 </body>
 </html>
